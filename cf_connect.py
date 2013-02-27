@@ -28,6 +28,8 @@ def open_connection_with_envvars():
         print 'Username - %s' % username
         print 'API Key - %s' % apikey
         print 'Auth URL - %s' % auth_url
+    connection = cloudfiles.get_connection(username,apikey,authurl=auth_url)
+    return connection
 
 def open_connection_with_configfile(config_file='~/.pycflogin',verbose=0):
     if verbose >=2: print '-Debug- open_connection_with_configfile - START'
