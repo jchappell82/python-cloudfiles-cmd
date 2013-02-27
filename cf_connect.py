@@ -5,17 +5,18 @@ verbose=3
 config_file="~/.pycflogin"
 
 def open_connection():
-    answer = raw_input('Login with credentials from'
-                       ' your envvars? [yes/no]')
-    if answer.lower() == "yes":
-        conx = open_connection_with_envvars()
-    else:
-        print 'Please provide the Cloud Files login details'
-        username = raw_input('username:')
-        api_key = raw_input('api_key:')
-        auth_url = raw_input('auth_url, [us/uk]')
-        conx = open_connection_with_credentials(username, api_key, auth_url)
-    return conx
+    #We don't really care about manually using credentials for this fork.
+    #answer = raw_input('Login with credentials from'
+    #                   ' your envvars? [yes/no]')
+    #if answer.lower() == "yes":
+    conx = open_connection_with_envvars()
+    # else:
+    #     print 'Please provide the Cloud Files login details'
+    #     username = raw_input('username:')
+    #     api_key = raw_input('api_key:')
+    #     auth_url = raw_input('auth_url, [us/uk]')
+    #     conx = open_connection_with_credentials(username, api_key, auth_url)
+    # return conx
 
 
 def open_connection_with_envvars():
