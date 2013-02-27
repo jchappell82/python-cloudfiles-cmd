@@ -16,7 +16,7 @@ def open_connection():
     #     api_key = raw_input('api_key:')
     #     auth_url = raw_input('auth_url, [us/uk]')
     #     conx = open_connection_with_credentials(username, api_key, auth_url)
-    # return conx
+    return conx
 
 
 def open_connection_with_envvars():
