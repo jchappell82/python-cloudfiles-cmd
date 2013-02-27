@@ -6,9 +6,9 @@ config_file="~/.pycflogin"
 
 def open_connection():
     answer = raw_input('Login with credentials from'
-                       ' ~/.pycflogin file? [yes/no]')
+                       ' your envvars? [yes/no]')
     if answer.lower() == "yes":
-        conx = open_connection_with_configfile()
+        conx = open_connection_with_envvars()
     else:
         print 'Please provide the Cloud Files login details'
         username = raw_input('username:')
@@ -17,6 +17,17 @@ def open_connection():
         conx = open_connection_with_credentials(username, api_key, auth_url)
     return conx
 
+
+def open_connection_with_envvars():
+    if verbose >=2: print '-Debug- open_connection_with_envvars - START'
+    if verbose >=1: print '-Debug- environment variables in use:'
+    username = os.getenv(OS_USERNAME)
+    apikey = os.getenv(OS_PASSWORD)
+    auth_url = os.getenv(OS_AUTH_URL, "https://identity.api.rackspacecloud.com/v2.0")
+    if verbose >=1:
+        print 'Username - %s' % username
+        print 'API Key - %s' % apikey
+        print 'Auth URL - %s' % auth_url
 
 def open_connection_with_configfile(config_file='~/.pycflogin',verbose=0):
     if verbose >=2: print '-Debug- open_connection_with_configfile - START'
