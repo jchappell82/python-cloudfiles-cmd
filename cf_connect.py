@@ -21,8 +21,8 @@ def open_connection():
 def open_connection_with_envvars():
     if verbose >=2: print '-Debug- open_connection_with_envvars - START'
     if verbose >=1: print '-Debug- environment variables in use:'
-    username = os.getenv('$OS_USERNAME')
-    apikey = os.getenv('$OS_PASSWORD')
+    username = os.getenv('OS_USERNAME')
+    apikey = os.getenv('OS_PASSWORD')
     auth_url = os.getenv('OS_AUTH_URL', "https://identity.api.rackspacecloud.com/v2.0")
     if verbose >=1:
         print 'Username - %s' % username
