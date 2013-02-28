@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 import cloudfiles
-from cf_connect import open_connection_with_configfile
-from cf_connect import open_connection_with_credentials
-from cf_connect import open_connection_with_envvars
-from cf_list_files import list_files
+from cf.cf_connect import open_connection_with_configfile
+from cf.cf_connect import open_connection_with_credentials
+from cf.cf_connect import open_connection_with_envvars
+from cf.cf_list_files import list_files
 
 verbose=0
 def list_containers(connection,verbose=0):
