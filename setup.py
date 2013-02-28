@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 from distutils.core import setup
-import __init__
+from cf import version
 from setuptools import find_packages
 
 setup(
     name='cf',
-    version=__init__.version,
+    version=version,
     author='Jon Chappell',
     author_email='jon@jchome.us',
     description='Provides an interface to Rackspace Cloud Files.  Modified from https://github.com/sandeep-sidhu/python-cloudfiles-cmd',
