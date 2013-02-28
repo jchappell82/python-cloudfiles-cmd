@@ -2,9 +2,10 @@ import cloudfiles
 import os
 from cf_connect import open_connection_with_configfile
 from cf_connect import open_connection_with_credentials
+from cf_connect import open_connection_with_envvars
 import sys
 
-verbose=2
+verbose=0
 
 def delete_file(connection,container_name,filename,verbose=0):
 	# get the container object
@@ -28,9 +29,9 @@ def delete_file(connection,container_name,filename,verbose=0):
 if __name__ == '__main__':
 	if verbose > 1:
 		print '-Debug- cf_delete_file.py START - Called as standalone file'
-		c = open_connection_with_configfile(verbose=True)
+		c = open_connection_with_envvars(verbose=True)
 	else:
-		c = open_connection_with_configfile()
+		c = open_connection_with_envvars()
 	try:
 		if (sys.argv[1] != "" and sys.argv[2] != ""):
 			container_name = sys.argv[1]

@@ -2,6 +2,7 @@ import cloudfiles
 import sys
 from cf_connect import open_connection_with_configfile
 from cf_connect import open_connection_with_credentials
+from cf_connect import open_connection_with_envvars
 
 verbose=1
 def info_container(connection,container_name,verbose=0):
@@ -16,7 +17,7 @@ def info_container(connection,container_name,verbose=0):
 	
 if __name__ == '__main__':
 	if verbose > 1: print '-Debug- called as a standalone file'
-	c = open_connection_with_configfile(verbose)
+	c = open_connection_with_envvars(verbose)
 	try:
 		if (sys.argv[1] != ""):
 			container_name = sys.argv[1]

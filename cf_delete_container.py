@@ -2,8 +2,9 @@ import cloudfiles
 import sys
 from cf_connect import open_connection_with_configfile
 from cf_connect import open_connection_with_credentials
+from cf_connect import open_connection_with_envvars
 
-verbose=1
+verbose=0
 def delete_container(connection,del_container_name,verbose=0):
 	if verbose >2: print '-Debug- inside delete_container functin'
 	if verbose >0: print '-Debug- delete_container, name passed \'%s\'' % del_container_name
@@ -18,7 +19,7 @@ def delete_container(connection,del_container_name,verbose=0):
 
 if __name__ == '__main__':
 	if verbose > 1: print '-Debug- called as a standalone file'
-	c = open_connection_with_configfile(verbose)
+	c = open_connection_with_envvars(verbose)
 	try:
 		if (sys.argv[1] != ""):
 			container_name = sys.argv[1]

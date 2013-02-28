@@ -1,7 +1,7 @@
 import cloudfiles
 import ConfigParser
 import os
-verbose=3
+verbose=0
 config_file="~/.pycflogin"
 
 def open_connection():
@@ -19,7 +19,7 @@ def open_connection():
     return conx
 
 
-def open_connection_with_envvars():
+def open_connection_with_envvars(verbose=0):
     if verbose >=2: print '-Debug- open_connection_with_envvars - START'
     if verbose >=1: print '-Debug- environment variables in use:'
     username = os.getenv('OS_USERNAME')
