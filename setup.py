@@ -5,7 +5,7 @@ from setuptools import find_packages
 
 setup(
     name='cf',
-    version=version,
+    version=__init__.version,
     author='Jon Chappell',
     author_email='jon@jchome.us',
     description='Provides an interface to Rackspace Cloud Files.  Modified from https://github.com/sandeep-sidhu/python-cloudfiles-cmd',
