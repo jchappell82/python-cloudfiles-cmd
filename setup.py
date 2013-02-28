@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 from distutils.core import setup
-import version
+import __init__
 from setuptools import find_packages
 
 setup(
