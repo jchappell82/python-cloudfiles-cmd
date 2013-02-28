@@ -12,6 +12,11 @@ setup(
     license='MIT',
     url='https://github.com/jchappell82/python-cloudfiles-cmd',
 
+    install_requires='python-cloudfiles',
+    provides=[
+        'cf',
+    ],
+
     packages=find_packages(),
     scripts=[
         'scripts/cf_list_containers',
